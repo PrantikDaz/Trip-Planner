@@ -1,0 +1,46 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: flex-start;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 40%, var(--color-border));
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.icon {
+  display: inline-flex;
+}
+
+.pulse {
+  transform-origin: center;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.text {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+  }
+}
